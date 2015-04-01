@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users , :only => [:show]
 
-  resources :contacts, :only => [:new, :create]
+  resources :contacts, :only => [:new, :create] do
+    get 'populate', on: :new
+  end
   resources :texts , :only => [:new, :create]
 
 end

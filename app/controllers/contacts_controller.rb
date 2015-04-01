@@ -3,6 +3,10 @@ class ContactsController<ApplicationController
     @contact = Contact.new
   end
 
+  def populate
+
+  end
+
   def create
     @contact = Contact.new(contact_params)
     @contact.user_id = current_user.id
