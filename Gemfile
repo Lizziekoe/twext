@@ -12,6 +12,8 @@ gem 'bcrypt-ruby', '~> 3.1.5', require: "bcrypt"
 gem 'unobtrusive_flash', '>=3'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'devise'
+gem 'rest_client'
+gem 'better_errors'
 
 group :development do
   gem 'byebug'
@@ -28,6 +30,7 @@ group :test, :development do
   gem 'pry'
   gem 'poltergeist'
   gem 'database_cleaner', '~> 1.4.1'
+  gem 'dotenv-rails'
 end
 
 group :test do
