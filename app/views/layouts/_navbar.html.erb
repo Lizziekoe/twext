@@ -14,8 +14,8 @@
 
     <div class="collapse navbar-collapse our-nav" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li>'All Posts'</li>
-        <li>'Add Post'</li>
+        <li></li>
+        <li></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
 
@@ -23,7 +23,7 @@
 
             <%= current_user.email %>
             <%= link_to 'LogOut', destroy_user_session_path, method: :delete , class: 'btn btn-info' %>
-            
+
         <% else %>
             <%= link_to "LogIn", new_user_session_path, class: 'btn btn-info' %>
             <%= link_to "Sign Up", new_user_registration_path, class: 'btn btn-success' %>

@@ -1,6 +1,7 @@
 require 'rails_helper'
 
-describe Text do
+describe Text, :vcr => true do
+  it { should belong_to :user }
   it 'adds an error if the to number is invalid' do
     text = Text.new(:body => 'hi', :to => '1111111', :from => '9712051276')
     text.save

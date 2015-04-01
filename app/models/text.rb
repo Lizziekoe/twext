@@ -1,5 +1,6 @@
 class Text < ActiveRecord::Base
   before_create :send_text
+  belongs_to :user
 
   private
   def send_text

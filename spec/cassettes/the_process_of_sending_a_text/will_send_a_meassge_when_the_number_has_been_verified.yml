@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://ACdfe6985fccb1485c15e3cabe55a1c35b:e8381b8a74d9153ef192cae0d4d54ce9@api.twilio.com/2010-04-01/Accounts/ACdfe6985fccb1485c15e3cabe55a1c35b/Messages.json
+    body:
+      encoding: US-ASCII
+      string: Body=Woot%20woo&To=5038163107&From=9712051276
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '45'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: CREATED
+    headers:
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 01 Apr 2015 21:02:18 GMT
+      X-Powered-By:
+      - AT-5000
+      X-Shenanigans:
+      - none
+      Content-Length:
+      - '741'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"sid": "SM94ca27ecbe144267b4ef2fcbbc0bfc9c", "date_created": "Wed,
+        01 Apr 2015 21:02:18 +0000", "date_updated": "Wed, 01 Apr 2015 21:02:18 +0000",
+        "date_sent": null, "account_sid": "ACdfe6985fccb1485c15e3cabe55a1c35b", "to":
+        "+15038163107", "from": "+19712051276", "body": "Woot woo", "status": "queued",
+        "num_segments": "1", "num_media": "0", "direction": "outbound-api", "api_version":
+        "2010-04-01", "price": null, "price_unit": "USD", "error_code": null, "error_message":
+        null, "uri": "/2010-04-01/Accounts/ACdfe6985fccb1485c15e3cabe55a1c35b/Messages/SM94ca27ecbe144267b4ef2fcbbc0bfc9c.json",
+        "subresource_uris": {"media": "/2010-04-01/Accounts/ACdfe6985fccb1485c15e3cabe55a1c35b/Messages/SM94ca27ecbe144267b4ef2fcbbc0bfc9c/Media.json"}}'
+    http_version: 
+  recorded_at: Wed, 01 Apr 2015 21:02:18 GMT
+recorded_with: VCR 2.9.3
