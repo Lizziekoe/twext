@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe "the process of creating a new contact" do
-  it "will show form when add contact is clicked", remote: true do
+  it "will show form when add contact is clicked", js: true do
     user = FactoryGirl.create(:user)
     login_as(user, :scope => :user)
     visit user_path(user)
@@ -9,7 +9,7 @@ describe "the process of creating a new contact" do
     expect(page).to have_content 'Name'
   end
 
-  it "will give error message if name is blank", remote: true do
+  it "will give error message if name is blank", js: true do
     user = FactoryGirl.create(:user)
     login_as(user, :scope => :user)
     visit user_path(user)
