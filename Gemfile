@@ -12,7 +12,7 @@ gem 'bcrypt-ruby', '~> 3.1.5', require: "bcrypt"
 gem 'unobtrusive_flash', '>=3'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'devise'
-gem 'rest_client'
+gem 'rest-client'
 gem 'better_errors'
 
 group :development do
