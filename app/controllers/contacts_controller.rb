@@ -3,14 +3,6 @@ class ContactsController<ApplicationController
     @contact = Contact.new
   end
 
-  def populate
-    @contact = Contact.find_by(params[:id])
-    response do |format|
-      format.html {redirect_to :back}
-      format.js
-    end
-  end
-
   def create
     @contact = Contact.new(contact_params)
     @contact.user_id = current_user.id

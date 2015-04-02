@@ -1,6 +1,11 @@
 class TextsController<ApplicationController
   def new
     @text = Text.new
+    @contact = Contact.find(params[:contact_id])
+    response do |format|
+      format.html {redirect_to :back}
+      format.js
+    end
   end
 
   def create

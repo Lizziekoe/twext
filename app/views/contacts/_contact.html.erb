@@ -1,2 +1,2 @@
-<h4><%= link_to contact.name, populate_new_contact_path, id: "contact-#{contact.id}"  %></h4>
+<h4><%= link_to contact.name, new_contact_text_path(contact.id), id: "contact-#{contact.id}", remote: true  %></h4>
 <h5><%= contact.number %></h5>
