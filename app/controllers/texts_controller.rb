@@ -1,7 +1,7 @@
 class TextsController<ApplicationController
   def new
-    @text = Text.new
     @contact = Contact.find(params[:contact_id])
+    @text = @contact.texts.new
     response do |format|
       format.html {redirect_to :back}
       format.js
@@ -9,12 +9,18 @@ class TextsController<ApplicationController
   end
 
   def create
+    @contact = Contact.find(params[:contact_id])
     @text = Text.new(text_params)
     @text.user_id = current_user.id
     @text.from = ENV['OUR_TWILIO_NUMBER']
+    @text.to = @contact.number
+    @text.save
+    @contact.save
+
     if @text.save
       flash[:notice] = "Message Successfully Sent"
       redirect_to user_path(current_user)
+
     else
       errors = ""
       @text.errors.messages[:base].each do |e|
@@ -33,7 +39,7 @@ class TextsController<ApplicationController
   private
 
   def text_params
-    params.require(:text).permit(:to, :body)
+    params.require(:text).permit(:to, :body, :contact_id)
   end
 
 end
