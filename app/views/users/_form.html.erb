@@ -1,6 +1,6 @@
-<%=form_for @text, class:"form-horizontal" do |f|%>
+<%=form_for @text, class:"form-horizontal"  do |f|%>
   <%= f.label :to , class:"form-label"%>
-  <%= f.text_field :to, class:"form-control" %>
+  <%= f.text_field :to, class:"form-control", id: 'to-field' %>
   <%= f.label :body, class:"form-label"  %>
   <br>
   <%= f.text_area :body, rows: 15, class:"form-control" %>

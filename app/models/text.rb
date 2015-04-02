@@ -1,6 +1,7 @@
 class Text < ActiveRecord::Base
   before_create :send_text
   belongs_to :user
+  has_and_belongs_to_many :contacts
 
   private
   def send_text

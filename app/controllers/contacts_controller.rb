@@ -4,7 +4,11 @@ class ContactsController<ApplicationController
   end
 
   def populate
-
+    @contact = Contact.find_by(params[:id])
+    response do |format|
+      format.html {redirect_to :back}
+      format.js
+    end
   end
 
   def create

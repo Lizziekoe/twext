@@ -5,7 +5,7 @@ describe "the process of sending a text", :vcr => true do
     user = FactoryGirl.create(:user)
     login_as(user, :scope => :user)
     visit user_path(user)
-    fill_in 'To', with: ENV['OUR_TO_TWILIO_NUMBER']
+    fill_in 'to-field', with: ENV['OUR_TO_TWILIO_NUMBER']
     fill_in 'Body', with: "Woot woo"
     click_on 'Twext Them'
     expect(page).to have_content 'Message Successfully Sent'
@@ -15,7 +15,7 @@ describe "the process of sending a text", :vcr => true do
     user = FactoryGirl.create(:user)
     login_as(user, :scope => :user)
     visit user_path(user)
-    fill_in 'To', with: '2564'
+    fill_in 'to-field', with: '2564'
     fill_in 'Body', with: "Woot woo"
     click_on 'Twext Them'
     expect(page).to have_content 'not a valid phone number'
